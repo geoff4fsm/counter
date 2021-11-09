@@ -60,36 +60,36 @@ export default class Counter extends Component {
 
 class CounterButton extends Component {
 
-    state = {
-        counter: 0
-    }
+    // state = {
+    //     counter: 0
+    // }
 
     render = () => {
         // const style = {fontSize : "50px", padding : "15px 30px"}
         return (
             <div className="counter">
-                <button onClick={this.increment}> + {this.props.by}</button>
-                <button onClick={this.decrement}> - {this.props.by}</button>
+                <button onClick={() => this.props.incrementMethod(this.props.by)}> + {this.props.by}</button>
+                <button onClick={() => this.props.decrementMethod(this.props.by)}> - {this.props.by}</button>
             </div>
         )
     }
 
-    increment = () => { // update state
-        //console.log('increment')
-        this.setState({
-            counter: this.state.counter + this.props.by
-        })
-        this.props.incrementMethod(this.props.by)
-    }
+//     increment = () => { // update state
+//         //console.log('increment')
+//         this.setState({
+//             counter: this.state.counter + this.props.by
+//         })
+//         this.props.incrementMethod(this.props.by)
+//     }
 
 
-    decrement = () => { // update state
-        //console.log('increment')
-        this.setState({
-            counter: this.state.counter + this.props.by
-        })
-        this.props.decrementMethod(this.props.by)
-    }
+//     decrement = () => { // update state
+//         //console.log('increment')
+//         this.setState({
+//             counter: this.state.counter + this.props.by
+//         })
+//         this.props.decrementMethod(this.props.by)
+//     }
 }
 CounterButton.defaultProps = {
     by: 1
